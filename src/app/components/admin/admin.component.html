@@ -1,0 +1,122 @@
+ <head>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="admin.component.css" />
+    
+ </head>
+ <app-navbar></app-navbar>
+ <section>
+
+    <div class="row">
+      <h2 class="section-heading">Admin Dashboard</h2>
+    </div>
+
+    <div class="row">
+
+      <div class="column">
+        <div class="card">
+          <a routerLink="/create-student" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <div class="icon-wrapper">
+            <i class="fa-solid fa-user-plus"></i>
+          </div>
+          <h3>Add Student</h3>
+        </a></div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <a routerLink="/add-teacher" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-chalkboard-user"></i>
+          </div>
+          <h3>Add Teacher</h3>
+        </a></div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <a routerLink="/add-course" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <h3>Add Course</h3>
+        </a></div>
+      </div>
+
+
+      <div class="column">
+        <div class="card">
+          <a routerLink="/assign-teacher" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-user-graduate"></i>
+          </div>
+          <h3>Assign Teacher To Course</h3>
+        </a></div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <a routerLink="/enroll-course" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <h3>Enroll Into Course</h3>
+        </a></div>
+      </div>
+
+
+      <div class="column">
+        <div class="card">
+          <a routerLink="/assign-marks" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <h3>Assign Marks</h3>
+        </a></div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <a routerLink="/consolidate-marksheet" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <div class="icon-wrapper">
+            <i class="fa-regular fa-square-check"></i>
+          </div>
+          <h3>Generate Consolidated Marksheet</h3>
+        </a></div>
+      </div>
+
+
+      <div class="column">
+        <div class="card">
+          <a routerLink="/all-students-marksheet" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <h3>All Student Consolidated Marksheet</h3>
+        </a></div>
+      </div>
+        
+      <div class="column">
+        <div class="card">
+          <a [routerLink]="['/course-details','']" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-circle-info"></i>
+          </div>
+          <h3>Course Students Details</h3>
+          </a>
+        </div>
+      </div>
+
+    </div>
+</section>
+
+
+

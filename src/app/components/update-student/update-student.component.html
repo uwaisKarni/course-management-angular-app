@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Student</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<app-navbar></app-navbar>
+<body>
+
+  <div *ngIf="successMessage" class="alert alert-primary" role="alert">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+
+  <div class="container">
+    <h1>Update Student</h1>
+    <form (ngSubmit)="doSubmitForm()" id="submitForm" >
+        <div class="mb-3">
+            <label for="studentId" class="form-label">Student Id</label>
+            <input type="number" class="form-control" id="studentId" name="studentId" [(ngModel)]="data.studentId" readonly="true">
+        </div>
+        <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="data.firstName" required>
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="data.lastName" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="data.email" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+</body>
+
+</html>

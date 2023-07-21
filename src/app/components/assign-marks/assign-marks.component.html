@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assign Marks</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<app-navbar></app-navbar>
+<body>
+ 
+  <div *ngIf="successMessage" class="alert alert-primary" role="alert">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+
+  <div class="container">
+    <h1>Assign Marks</h1>
+    <form #myForm="ngForm" (ngSubmit)="doSubmitForm()" id="submitForm">
+      <div class="mb-3">
+        <label for="courseId" class="form-label">Course Id</label>
+        <input type="number" class="form-control" id="courseId" name="courseId" [(ngModel)]="data.courseId" required>
+      </div>
+      <div class="mb-3">
+        <label for="studentId" class="form-label">Student ID</label>
+        <input type="number" class="form-control" id="studentId" name="studentId" [(ngModel)]="data.studentId" required>
+      </div>
+      <div class="mb-3">
+        <label for="maximumMarks" class="form-label">Maximum Marks</label>
+        <input type="number" class="form-control" id="maximumMarks" name="maximumMarks" [(ngModel)]="data.maximumMarks" oninput="validity.valid||(value='');" required>
+      </div>
+      <div class="mb-3">
+        <label for="obtainMarks" class="form-label">Obtain Marks</label>
+        <input type="number" class="form-control" id="obtainMarks" name="obtainMarks" [(ngModel)]="data.obtainMarks" (ngModelChange)="onChange($event)" required [max]="data.maximumMarks">
+      </div> 
+      <div *ngIf="validate">
+        <p>Obtain Marks should be less than or equal to Maximum Marks.</p>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>

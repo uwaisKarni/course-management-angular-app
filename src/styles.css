@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+.headerlogo{
+    height: 50px;
+}
+
+.homelogo{
+    height: 200%;
+    width: 200%; 
+}
+
+.container{
+     
+    margin-top: 50px;
+    align-items: center; 
+}
+
+.success-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #dff0d8;
+    border: 1px solid #3c763d;
+    color: #3c763d;
+    padding: 10px;
+  }
+  

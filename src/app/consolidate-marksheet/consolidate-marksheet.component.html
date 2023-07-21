@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Marksheet</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    .table-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<app-navbar></app-navbar>
+<body>
+  <div class="container">
+    <h1>Course Marksheet</h1>
+    <div class="mb-3" style="display: flex;">
+        <input type="number" [(ngModel)]="courseId" (blur)="getCoursMarksheet($event.target.value)" style="width: 80%;" id="filterInput" class="form-control" placeholder="Enter Course Id To Generate Consolidate Result">
+        <button class="btn btn-secondary" (click)="clearFilter()" style="margin-left: 10px;">Clear Filter</button>
+      </div>
+    <div id="courseMarksheet" class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Student Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Course Title</th>
+            <th>Maximum Marks</th>
+            <th>Obtain Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let marksheet of marksheets">
+            <td>{{ marksheet.studentId }}</td>
+            <td>{{  marksheet.firstName }}</td>
+            <td>{{  marksheet.lastName }}</td>
+            <td>{{  marksheet.email }}</td>
+            <td>{{  marksheet.courseTitle }}</td>
+            <td>{{  marksheet.maximumMarks }}</td>
+            <td>{{  marksheet.obtainMarks }}</td>
+          </tr>
+          <!-- Data will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
