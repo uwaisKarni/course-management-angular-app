@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "course-management-system-d4115": {
+      "hosting": {
+        "course-management": [
+          "course-management-system-d4115"
+        ]
+      }
+    }
+  }
+}

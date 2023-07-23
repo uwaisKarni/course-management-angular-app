@@ -7,12 +7,14 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  
+  isAdmin;
   constructor(private authService : AuthService){}
 
-  canActivate(){
-     
-  if(this.authService.isRoleAdmin()){
+  async canActivate(){
+    this.isAdmin = await this.authService.isRoleAdmin() ;
+    console.log("Is Admin",this.isAdmin);
+  if(this.isAdmin){
+    console.log("admin authenticated");
     return true;
   }else{
     window.alert("you do not have sufficient permissions to access this admin page");

@@ -18,6 +18,9 @@ import { UpdateStudentComponent } from './components/update-student/update-stude
 import { UpdateTeacherComponent } from './components/update-teacher/update-teacher.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 const routes: Routes = [
   { path: 'admin', component: AdminComponent, canActivate:[AuthGuard] },
@@ -37,8 +40,11 @@ const routes: Routes = [
   { path:'assign-marks',component: AssignMarksComponent},
   { path: 'update-student/:studentId', component: UpdateStudentComponent },
   { path: 'update-teacher/:teacherId', component: UpdateTeacherComponent },
-  { path: '', component: LoginComponent },
-
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'register', component: RegistrationComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-email', component: VerifyEmailComponent },
 ];
 
 @NgModule({

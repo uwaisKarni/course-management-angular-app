@@ -31,6 +31,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { LoginComponent } from './components/login/login.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 
 @NgModule({
@@ -53,7 +58,10 @@ import { LoginComponent } from './components/login/login.component';
     AssignMarksComponent,
     UpdateStudentComponent,
     UpdateTeacherComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent    
   ],
   imports: [
     BrowserModule,
@@ -61,9 +69,18 @@ import { LoginComponent } from './components/login/login.component';
     NgbModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [CreateStudentService,AdminService,TeacherService,CourseService,AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+function provideFireStore(arg0: () => any): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
+  throw new Error('Function not implemented.');
+}
+
+function getFirestore(): any {
+  throw new Error('Function not implemented.');
+}
+

@@ -1,60 +1,43 @@
-<!-- <h2>Login</h2>
-<form (ngSubmit)="login()">
-  <div>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username" required>
-  </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password" required>
-  </div>
-  <button type="submit">Login</button>
-</form> -->
-
-<!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
-
-<body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-          <div class="card border-0 shadow rounded-3 my-5">
-            <div class="card-body p-4 p-sm-5">
-              <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
-              <form (ngSubmit)="login()">
-                <div class="form-floating mb-3">
-                  <input type="username" class="form-control" [(ngModel)]="username" name="username" placeholder="admin">
-                  <label for="username">Username</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password">
-                  <label for="password">Password</label>
-                </div>
-  
-                <div class="form-check mb-3">
-                  <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
-                  <label class="form-check-label" for="rememberPasswordCheck">
-                    Remember password
-                  </label>
-                </div>
-                <div class="d-grid">
-                  <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Login</button>
-                </div>
-                <hr class="my-4">
-                <div class="d-grid mb-2">
-                  <button class="btn btn-google btn-login text-uppercase fw-bold" type="submit">
-                    <i class="fab fa-google me-2"></i> Sign in with Google
-                  </button>
-                </div>
-                <div class="d-grid">
-                  <button class="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
-                    <i class="fab fa-facebook-f me-2"></i> Sign in with Facebook
-                  </button>
-                </div>
-              </form>
-            </div>
+<div class="container-fluid">
+  <div class="row mt-5">
+      <div class="col"></div>
+      <div class="col-4">
+          <div class="card shadow">
+              <div class="card-body">
+                  <form>
+                      <div class="mb-3">
+                          <h4 class="text-dark text-muted">Login</h4>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" [(ngModel)]="email">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" [(ngModel)]="password">
+                      </div>
+                      <button type="button" class="btn btn-info" (click)="login()">Login</button>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <a href="/register" style="text-decoration: none;">Need Account ? <span class="text-danger">Register</span></a>
+                          </div>
+                          <div class="col-md-6">
+                              <a href="/forgot-password" class="text-dark" style="text-decoration: none;"> Forgot Password ? </a>
+                          </div>
+                      </div>
+                      <div class="row mt-2">
+                          <a (click)="signInWithGoogle()" style="text-decoration: none;cursor: pointer;">
+                              <div class="card shadow text-center">
+                                  <div class="card-body">
+                                      <img src="assets\images\google.png" alt="" height="24px" width="24px"> Sign In with Google
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                  </form>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
-  </body>
-  
+      <div class="col"></div>
+  </div>
+</div>
